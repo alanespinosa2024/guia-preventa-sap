@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Guía de Preventa SAP by Alan Espinosa</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <style>
+
+body { font-family: Arial, sans-serif; background: #f5f5f5; margin:0; padding:0; color:#333; }
+header { background: #004d99; color: #fff; padding: 25px 20px; text-align:center; }
+h1 { margin:0; font-size:2em; }
+.container { padding: 20px; max-width: 900px; margin:auto; }
+.accordion { cursor:pointer; padding:15px; width:100%; border:none; text-align:left; outline:none; margin-bottom:5px; font-size:1.1em; border-radius:5px; display:flex; align-items:center; }
+.accordion span { margin-right:10px; font-size:1.2em; }
+.panel { padding: 0 20px 15px 20px; background:white; display:none; overflow:hidden; border-left:5px solid; margin-bottom:10px; border-radius:5px; }
+.phase-blue { background-color:#0073e6; color:white; }
+.phase-green { background-color:#28a745; color:white; }
+.phase-orange { background-color:#ff9933; color:white; }
+.phase-purple { background-color:#6f42c1; color:white; }
+input[type=text], input[type=number], textarea { width: 95%; padding:6px; border:1px solid #ccc; border-radius:4px; margin-top:5px; }
+textarea { resize: vertical; }
+button { margin-top: 15px; padding: 10px 20px; background-color: #2980b9; color: white; border: none; border-radius: 5px; cursor: pointer; }
+button:hover { background-color: #1c5980; }
+#resumen { background:white; padding:20px; border-radius:5px; border-left:5px solid #004d99; margin-top:20px; }
+table { border-collapse: collapse; width: 100%; margin-top:10px; }
+table, th, td { border:1px solid #ccc; }
+th, td { padding:8px; text-align:left; }
+th { background:#f0f0f0; }
+.semaforo { font-weight:bold; padding:3px 8px; border-radius:4px; color:white; display:inline-block; }
+.semaforo-verde { background:#28a745; }
+.semaforo-amarillo { background:#ffc107; color:#333; }
+.semaforo-rojo { background:#dc3545; }
+.bar { height:20px; border-radius:4px; display:inline-block; background:#28a745; }
+</style>
+</head>
+<body>
+
+<header>
+<h1>Guía de Preventa SAP - Alan Espinosa</h1>
+</header>
+
+<div class="container">
+
+<!-- Guía Maestra de Preventa -->
+<button class="accordion phase-blue">
+  <span>➤</span> Guía Maestra de Preventa: Estrategia de Valor S/4HANA
+</button>
+<div class="panel">
+
+  <h3>I. Mentalidad Estratégica (The Pitch)</h3>
+  <p>
+    Como preventa, <strong>no vendes licencias</strong>; vendes
+    <strong>tiempo, agilidad y visibilidad</strong>.
+    Tu discurso debe posicionar a SAP S/4HANA como un
+    <strong>acelerador del negocio</strong>, no como un proyecto de IT.
+  </p>
+  <ul>
+    <li><strong>Habla Negocio:</strong> “Módulo” → Capacidad | “Transacción” → Valor</li>
+    <li><strong>Mata el Excel:</strong> dato muerto vs dato vivo en tiempo real</li>
+    <li><strong>Clean Core:</strong> la última gran migración de la empresa</li>
+  </ul>
+
+  <h3>II. Guía de Reunión: Del Dolor al Valor</h3>
+
+  <h4>Fase 1: Apertura y Empatía (Contexto)</h4>
+  <p><strong>Objetivo:</strong> Establecer autoridad sin tecnicismos.</p>
+  <p>
+    “Hoy las empresas no compiten solo por la calidad de su producto,
+    sino por su <strong>velocidad de respuesta</strong>.
+    La tecnología debe ser el acelerador, no el freno”.
+  </p>
+  <p><strong>Pregunta de Oro:</strong><br>
+    “Si hoy ocurriera un cambio drástico en costos o demanda,
+    ¿cuánto tiempo tardan en tener el impacto real para decidir?”
+  </p>
+
+  <h4>Fase 2: Diagnóstico de Silos (Dolor)</h4>
+  <p>
+    “Ventas promete, Almacén corre y Finanzas concilia.
+    Esto genera <em>puntos ciegos</em> donde se pierde dinero”.
+  </p>
+  <p><strong>Pregunta de Impacto:</strong><br>
+    “¿Cuántas versiones de ‘la verdad’ tienen hoy en sus juntas?”
+  </p>
+
+  <h4>Fase 3: Propuesta de Valor por Áreas</h4>
+  <table>
+    <tr><th>Área / Proceso</th><th>Argumento de Negocio (Valor)</th></tr>
+    <tr>
+      <td>Finanzas (Record-to-Report)</td>
+      <td>Cierre continuo y rol financiero estratégico</td>
+    </tr>
+    <tr>
+      <td>Ventas / eCommerce (Lead-to-Cash)</td>
+      <td>Promesas reales y protección del flujo de caja</td>
+    </tr>
+    <tr>
+      <td>Compras (Source-to-Pay)</td>
+      <td>Control total del gasto y pagos correctos</td>
+    </tr>
+    <tr>
+      <td>Cadena de Suministro (Design-to-Operate)</td>
+      <td>Replanificación automática ante fallas</td>
+    </tr>
+    <tr>
+      <td>RRHH (Recruit-to-Retire)</td>
+      <td>Capital humano conectado a rentabilidad</td>
+    </tr>
+  </table>
+
+  <h4>Fase 4: Momento “Wow” (Experiencia)</h4>
+  <p>
+    “Este tablero es para el negocio, no para sistemas.
+    Indicadores en tiempo real accesibles desde cualquier dispositivo”.
+  </p>
+
+  <h4>Fase 5: Diferenciador Tecnológico</h4>
+  <ul>
+    <li><strong>Clean Core:</strong> actualizaciones continuas sin proyectos traumáticos</li>
+    <li><strong>SAP Signavio:</strong> mejora basada en minería real de procesos</li>
+  </ul>
+
+  <h4>Fase 6: Cierre y Visión</h4>
+  <p>
+    “SAP S/4HANA no reemplaza lo que funciona,
+    <strong>desbloquea el potencial</strong> que hoy limita el crecimiento”.
+  </p>
+
+  <h3>III. ¿Qué Incluye RISE with SAP?</h3>
+  <table>
+    <tr><th>Categoría</th><th>Incluido</th><th>No Incluido</th></tr>
+    <tr>
+      <td>Núcleo ERP</td>
+      <td>S/4HANA Cloud (Public / Private)</td>
+      <td>Industria profunda</td>
+    </tr>
+    <tr>
+      <td>Infraestructura</td>
+      <td>Hosting, backups y ciberseguridad</td>
+      <td>Apps no SAP</td>
+    </tr>
+    <tr>
+      <td>Plataforma BTP</td>
+      <td>Créditos de integración</td>
+      <td>Consumo excedente</td>
+    </tr>
+    <tr>
+      <td>Automatización</td>
+      <td>SAP Build base</td>
+      <td>Bots adicionales</td>
+    </tr>
+    <tr>
+      <td>RRHH</td>
+      <td>Administración básica</td>
+      <td>SuccessFactors</td>
+    </tr>
+  </table>
+
+  <h3>IV. Tips para tu Rol en la Consultora</h3>
+  <ul>
+    <li><strong>Gobierno:</strong> Transparencia y control presupuestal</li>
+    <li><strong>eCommerce:</strong> Omnicanalidad y promesas reales</li>
+    <li><strong>Industria nueva:</strong> procesos que aún viven en Excel</li>
+  </ul>
+
+  <h3>V. Versiones de SAP S/4HANA</h3>
+
+  <h4>1. SAP S/4HANA Cloud Public Edition</h4>
+  <ul>
+    <li><strong>Versión más reciente:</strong> 2602 (febrero 2026)</li>
+    <li><strong>Nomenclatura:</strong> Los dos primeros dígitos indican el año (26) y los dos siguientes el mes (02).</li>
+    <li><strong>Novedades:</strong> Mejoras en la barra de shell con el nombre del producto visible por defecto y mayores capacidades de IA generativa mediante <em>SAP Joule</em>.</li>
+  </ul>
+
+  <h4>2. SAP S/4HANA Cloud Private Edition / On-Premise</h4>
+  <ul>
+    <li><strong>Versión mayor reciente:</strong> SAP S/4HANA 2025 (octubre 2025)</li>
+    <li><strong>Cambio de Estrategia:</strong> Ciclo de lanzamiento cada dos años a partir de 2023 para mayor estabilidad.</li>
+    <li><strong>Mantenimiento:</strong> Periodo principal de 7 años (mainstream).</li>
+    <li><strong>Innovaciones 2025:</strong> Automatización inteligente, SAP Fiori 4.0 con diseño móvil, analítica predictiva embebida en core financiero y cadena de suministro.</li>
+  </ul>
+
+  <h4>Resumen de Versiones Actuales</h4>
+  <ul>
+    <li><strong>Public Cloud:</strong> 2602 (Feb 2026)</li>
+    <li><strong>Private Cloud / On-Premise:</strong> 2025 (Oct 2025)</li>
+  </ul>
+
+</div>
+
+
+  <!-- Información del Cliente -->
+<button class="accordion phase-blue exportable">
+  <span>➤</span> Información del Cliente
+</button>
+
+<div class="panel exportable-panel">
+  <label>Nombre del Cliente:<br>
+    <input type="text" id="cliente" placeholder="Ej: ACME Corp.">
+  </label>
+
+  <label>Contacto:<br>
+    <input type="text" id="contacto" placeholder="Ej: Juan Pérez">
+  </label>
+
+  <label>Observaciones:<br>
+    <textarea id="observaciones" placeholder="Notas adicionales..."></textarea>
+  </label>
+
+  <label>Fecha:<br>
+    <input type="text" id="fecha" value="" readonly>
+  </label>
+</div>
+
+
+  <!-- 🔹 Perfil del Prospecto (DDA Mandatory) -->
+<button class="accordion phase-blue exportable">
+  <span>➤</span> Perfil del Prospecto (Requisitos DDA)
+</button>
+
+<div class="panel exportable-panel">
+
+  <h3 style="margin-top:10px;">Perfil del Prospecto (Requisitos DDA)</h3>
+
+  <div class="pdf-grid">
+    <label>Sector Industrial Principal:<br>
+      <select id="sector">
+        <option value="">Seleccione una industria...</option>
+        <option value="consumer">Consumer Products</option>
+        <option value="retail">Retail</option>
+        <option value="public">Public Sector (Gobierno)</option>
+        <option value="discrete">Discrete Manufacturing</option>
+        <option value="professional">Professional Services</option>
+        <option value="other">Otra Industria...</option>
+      </select>
+    </label>
+
+    <label>Ingresos Anuales Estimados (USD):<br>
+      <select id="revenue">
+        <option value="smb">< $250M (Small/Midsize)</option>
+        <option value="mid">$250M - $1B (Midmarket)</option>
+        <option value="large">> $1B (Enterprise)</option>
+      </select>
+    </label>
+  </div>
+
+  <label class="pdf-block">Países de Implementación (Localización):<br>
+    <input type="text" id="paises" placeholder="Ej: México, Colombia, USA">
+  </label>
+
+  <label class="pdf-block">Entorno de Nube Sugerido:<br>
+    <input type="radio" name="cloud_type" value="public"> S/4HANA Public Cloud (Estandarizado)<br>
+    <input type="radio" name="cloud_type" value="private"> S/4HANA Private Cloud (Flexible / Custom)
+  </label>
+
+</div>
+
+
+<!-- Identificación de necesidades -->
+<button class="accordion phase-green exportable">
+  <span>➤</span> Identificación de necesidades
+</button>
+
+<div class="panel exportable-panel">
+
+  <label class="pdf-block">¿Cuántos usuarios de sistemas/ERP son actualmente?<br>
+    <small>Ej: 100</small><br>
+    <input type="number" id="usuarios_totales" min="0" value="0">
+  </label>
+
+  <label class="pdf-block">¿Cuál es la necesidad de negocio que impulsa la transformación?<br>
+    <small>Ej: Modernizar ERP, mejorar procesos financieros, reducir TCO</small><br>
+    <input type="text" id="necesidad">
+  </label>
+
+  <label class="pdf-block">¿Qué objetivos estratégicos se esperan cumplir con S/4HANA?<br>
+    <small>Ej: Transformación digital, eficiencia operativa, crecimiento</small><br>
+    <input type="text" id="objetivos">
+  </label>
+
+</div>
+
+
+  <!-- 🔹 Diagnóstico de Gaps y Necesidades Técnicas INTEGRADO -->
+<button class="accordion phase-green exportable">
+  <span>➤</span> Diagnóstico de Gaps y Necesidades Técnicas
+</button>
+
+<div class="panel exportable-panel">
+
+  <h3 class="pdf-block" style="margin-top:20px;">Diagnóstico de Gaps y Necesidades Técnicas</h3>
+
+  <h4 class="pdf-block">Análisis de Integraciones y Extensibilidad</h4>
+  <label class="pdf-block"><strong>1. Integración con Sistemas Legados/Externos:</strong><br>
+    <small>¿Necesita conectar SAP con otras plataformas? (Ej: Salesforce, Shopify, Software de Básculas)</small><br>
+    <textarea id="integraciones" placeholder="Especifique el nombre del sistema y el flujo (ej: Pedidos desde Magento a SAP)..."></textarea>
+  </label>
+
+  <label class="pdf-block"><strong>2. Requerimientos Legales o Fiscales Especiales:</strong><br>
+    <small>¿Existen normativas locales o gubernamentales no cubiertas por la ley estándar?</small><br>
+    <textarea id="fiscal" placeholder="Ej: Reportes específicos para entes reguladores de gobierno..."></textarea>
+  </label>
+
+  <label class="pdf-block"><strong>3. Definición de Código Fuente (ABAP):</strong><br>
+    <small>¿El cliente requiere modificar el código interno de SAP o acceso total a la SPRO?</small><br>
+    <select id="abap_req" style="width: 100%; padding:6px; border-radius:4px; margin-top:5px;">
+      <option value="no">No (Podemos vivir con el Estándar / Clean Core)</option>
+      <option value="keyuser">Solo ajustes menores (Campos nuevos / Lógica simple)</option>
+      <option value="yes">SÍ (Necesitamos acceso total al código fuente / Private Cloud)</option>
+    </select>
+  </label>
+
+  <label class="pdf-block"><strong>4. Volumen de Operación Mensual:</strong><br>
+    <input type="number" id="vol_facturas" placeholder="Ej: Número de facturas o pedidos por mes">
+  </label>
+
+</div>
+
+
+
+<!-- Exploración de capacidades de SAP -->
+<button class="accordion phase-orange exportable">
+  <span>➤</span> Exploración de capacidades de SAP
+</button>
+
+<div class="panel exportable-panel">
+
+  <p class="pdf-block"><strong>Comparativa de funcionalidades por versión de SAP S/4HANA</strong></p>
+
+  <table class="pdf-block" border="1" cellspacing="0" cellpadding="5" style="border-collapse: collapse; width: 100%;">
+    <thead>
+      <tr>
+        <th>Categoría</th>
+        <th>Incluido en la Suscripción Core</th>
+        <th>Requiere Pago Adicional / Créditos (CPEA)</th>
+        <th>Public & Grow</th>
+        <th>Private</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Finanzas</td>
+        <td>Contabilidad General, Cuentas por Cobrar/Pagar, Costos, Activos Fijos</td>
+        <td>Advanced Cash Management, Treasury, Advanced Financial Close, FP&A avanzado, Central Finance</td>
+        <td><input type="checkbox" name="finanzas_pubgrow"></td>
+        <td><input type="checkbox" name="finanzas_private"></td>
+      </tr>
+      <tr>
+        <td>Logística y Cadena de Suministro</td>
+        <td>Gestión de Inventarios, Compras Operativas, Ventas y Distribución básica</td>
+        <td>EWM Avanzado, TM, Planificación de Demanda Avanzada, Manufacturing Execution, Asset Mgmt avanzado, Quality Mgmt avanzado</td>
+        <td><input type="checkbox" name="logistica_pubgrow"></td>
+        <td><input type="checkbox" name="logistica_private"></td>
+      </tr>
+      <tr>
+        <td>Infraestructura y Base de Datos</td>
+        <td>Alojamiento en Hyperscalers, DB HANA, Soporte de Infraestructura</td>
+        <td>Almacenamiento extra, Backup adicional, Disaster Recovery</td>
+        <td><input type="checkbox" name="infra_pubgrow"></td>
+        <td><input type="checkbox" name="infra_private"></td>
+      </tr>
+      <tr>
+        <td>Plataforma y Tecnología (BTP)</td>
+        <td>Créditos limitados iniciales (CPEA) para integraciones básicas</td>
+        <td>SAP Build, SAP Analytics Cloud (SAC), Integration Suite, Extension Suite</td>
+        <td><input type="checkbox" name="plataforma_pubgrow"></td>
+        <td><input type="checkbox" name="plataforma_private"></td>
+      </tr>
+      <tr>
+        <td>Recursos Humanos</td>
+        <td>Gestión básica de empleados y tiempos</td>
+        <td>SAP SuccessFactors (Employee Central, Payroll, Learning, Recruiting)</td>
+        <td><input type="checkbox" name="rrhh_pubgrow"></td>
+        <td><input type="checkbox" name="rrhh_private"></td>
+      </tr>
+      <tr>
+        <td>Innovación e IA</td>
+        <td>Capacidades básicas de ML y analítica integrada</td>
+        <td>Joule (IA generativa), Predictive Analytics, Conversational AI / SAP CoPilot</td>
+        <td><input type="checkbox" name="innovacion_pubgrow"></td>
+        <td><input type="checkbox" name="innovacion_private"></td>
+      </tr>
+      <tr>
+        <td>Redes de Negocio</td>
+        <td>Conectividad básica a portales SAP</td>
+        <td>SAP Business Network, Asset Intelligence Network</td>
+        <td><input type="checkbox" name="redes_pubgrow"></td>
+        <td><input type="checkbox" name="redes_private"></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4 class="pdf-block" style="margin-top:15px;">Exploración Interactiva</h4>
+
+  <label class="pdf-block">¿Qué funcionalidades clave de S/4HANA son relevantes?<br>
+    <small>Ej: Embedded Analytics, Fiori, Machine Learning</small><br>
+    <input type="text" id="funcionalidades">
+  </label>
+
+  <label class="pdf-block">¿Qué beneficios de negocio se esperan?<br>
+    <small>Ej: Optimización financiera, mayor agilidad, automatización</small><br>
+    <input type="text" id="beneficios">
+  </label>
+
+  <p class="pdf-block" style="margin-top:10px; font-style:italic; font-size:0.9em;">
+    <strong>Nota sobre Public vs Grow:</strong> Las funcionalidades de SAP S/4HANA Public y Grow son idénticas. La diferencia principal es la cantidad de usuarios soportados, siendo Grow la opción para clientes que requieren más licencias concurrentes o mayor escalabilidad.
+  </p>
+
+  <p class="pdf-block" style="margin-top:5px; font-style:italic; font-size:0.9em;">
+    <strong>Nota sobre créditos CPEA (SAP Public Cloud):</strong>  
+    Con SAP S/4HANA Public Cloud, los clientes reciben créditos CPEA calculados como aproximadamente el 1 % del valor anual del contrato (ACV), con un <strong>mínimo de €2 000 y un máximo de €16 000 por año</strong> para consumir servicios de SAP BTP y otros servicios opcionales según necesidades de integración, extensiones o analítica.
+  </p>
+
+</div>
+
+
+
+<!-- Readiness y Alineación -->
+<button class="accordion phase-purple exportable">
+  <span>➤</span> Readiness y Alineación
+</button>
+
+<div class="panel exportable-panel">
+  <label class="pdf-block">Evaluar preparación organizacional:<br>
+    <small>Ej: Alineación de stakeholders, equipo interno identificado, patrocinio ejecutivo confirmado</small><br>
+    <input type="text" id="readiness">
+  </label>
+</div>
+
+
+<!-- Introducción SAP FUE -->
+<button class="accordion phase-blue exportable">
+  <span>➤</span> Introducción: ¿Qué es SAP FUE?
+</button>
+
+<div class="panel exportable-panel">
+  <p class="pdf-block">
+    <strong>SAP FUE (Full User Equivalent)</strong> es una métrica que ayuda a calcular la cantidad de licencias necesarias según los usuarios de la empresa y su nivel de uso en el sistema.
+  </p>
+  
+  <h3 class="pdf-block">Tipo de usuario (lenguaje negocio)</h3>
+  <table class="pdf-block">
+    <tr><th>Tipo de usuario</th><th>Ejemplo</th><th>FUE típico</th></tr>
+    <tr><td>Usuario clave</td><td>Finanzas, planeación, ventas</td><td>1.0</td></tr>
+    <tr><td>Usuario operativo</td><td>Compras, almacén, logística</td><td>0.3–0.5</td></tr>
+    <tr><td>Usuario ocasional</td><td>Aprobadores, gerentes</td><td>0.03</td></tr>
+  </table>
+
+  <h3 class="pdf-block">Paso 2️⃣ Usar números reales (no %)</h3>
+  <pre class="pdf-block">
+Ejemplo:
+50 usuarios clave
+120 usuarios operativos
+80 usuarios ocasionales
+  </pre>
+
+  <h3 class="pdf-block">Paso 3️⃣ Conversión directa a FUE</h3>
+  <table class="pdf-block">
+    <tr><th>Usuarios reales</th><th>Consumo</th></tr>
+    <tr><td>50 usuarios clave × 1.0</td><td>50 FUE</td></tr>
+    <tr><td>120 operativos × 0.3</td><td>36 FUE</td></tr>
+    <tr><td>80 ocasionales × 0.03</td><td>2.4 FUE</td></tr>
+    <tr><th>Consumo total aproximado</th><th>≈ 38–40 FUEs</th></tr>
+  </table>
+</div>
+
+
+<!-- Usuarios y cálculo de FUE -->
+<button class="accordion phase-green"><span>➤</span> Usuarios y cálculo de FUE</button>
+<div class="panel">
+  <label>Finanzas (uso intensivo): <input type="number" class="usuario-area" data-area="Finanzas" min="0" value="0"></label>
+  <label>Compras (uso intensivo): <input type="number" class="usuario-area" data-area="Compras" min="0" value="0"></label>
+  <label>Ventas (uso intensivo): <input type="number" class="usuario-area" data-area="Ventas" min="0" value="0"></label>
+  <label>Sistemas/IT (uso intensivo): <input type="number" class="usuario-area" data-area="Sistemas" min="0" value="0"></label>
+  <label>Recursos Humanos (uso operativo): <input type="number" class="usuario-area" data-area="RRHH" min="0" value="0"></label>
+  <label>Operaciones/Almacén (uso operativo): <input type="number" class="usuario-area" data-area="Operaciones" min="0" value="0"></label>
+  <label>Gerentes/Aprobadores (uso ocasional): <input type="number" class="usuario-area" data-area="Gerentes" min="0" value="0"></label>
+</div>
+
+<button id="calcular">Calcular FUE</button>
+<button id="exportar">Exportar PDF</button>
+
+<div id="resumen"></div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  // Inicializar fecha automática
+  const fechaInput = document.getElementById("fecha");
+  const hoy = new Date();
+  fechaInput.value = hoy.toLocaleDateString();
+
+  // Acordeones
+  const acc = document.getElementsByClassName("accordion");
+  for (let i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      const panel = this.nextElementSibling;
+      panel.style.display = panel.style.display === "block" ? "none" : "block";
+    });
+  }
+
+  const areas = [
+    { nombre: "Finanzas", factor: 1.0 },
+    { nombre: "Compras", factor: 1.0 },
+    { nombre: "Ventas", factor: 1.0 },
+    { nombre: "Sistemas", factor: 1.0 },
+    { nombre: "RRHH", factor: 0.3 },
+    { nombre: "Operaciones", factor: 0.3 },
+    { nombre: "Gerentes", factor: 0.03 }
+  ];
+
+  const opcionesSAP = [
+    { nombre: "GROW with SAP", fueMin: 10 }, 
+    { nombre: "RISE with S4 HANA cloud", fueMin: 35 },
+    { nombre: "RISE with S4 HANA cloud + experience management", fueMin: 500 },
+    { nombre: "RISE with S4 HANA cloud Private Edition", fueMin: 40 },
+    { nombre: "SAP ERP Private Cloud", fueMin: 40 }
+  ];
+
+  function calcularFUE() {
+    let totalFUE = 0;
+    const resumenDiv = document.getElementById("resumen");
+    resumenDiv.innerHTML = "<h2>Detalle FUE</h2>";
+
+    // Tabla detalle FUE
+    let tabla = "<table><tr><th>Área</th><th>Usuarios</th><th>Factor</th><th>FUE</th></tr>";
+    areas.forEach(area => {
+      const cantidad = parseFloat(document.querySelector(`.usuario-area[data-area="${area.nombre}"]`).value) || 0;
+      const fue = cantidad * area.factor;
+      totalFUE += fue;
+      tabla += `<tr><td>${area.nombre}</td><td>${cantidad}</td><td>${area.factor}</td><td>${fue.toFixed(2)}</td></tr>`;
+    });
+    tabla += `<tr><th colspan="3">Total FUE estimado</th><th>${totalFUE.toFixed(2)}</th></tr></table>`;
+    resumenDiv.innerHTML += tabla;
+
+    // Mejor opción solo
+    let opcionesCubridoras = opcionesSAP.filter(op => op.fueMin >= totalFUE);
+    let mejorOpcion = null;
+    if (opcionesCubridoras.length > 0) {
+      mejorOpcion = opcionesCubridoras.reduce((prev, curr) => curr.fueMin < prev.fueMin ? curr : prev);
+    }
+
+    // Tabla Opciones SAP con semáforo y barra
+    let tablaSAP = `<h2>Opciones de Compra mínima SAP</h2>
+      <table>
+      <tr><th>Opción</th><th>FUE mínimo</th><th>Total FUE vs opción</th><th>Semáforo</th></tr>`;
+
+    opcionesSAP.forEach(op => {
+      let semaforo = '';
+      let barra = '';
+      if (mejorOpcion && op.nombre === mejorOpcion.nombre) {
+        const ratio = totalFUE / op.fueMin;
+        let colorClass = 'semaforo-verde';
+        if (ratio >= 1) colorClass = 'semaforo-rojo';
+        else if (ratio >= 0.8) colorClass = 'semaforo-amarillo';
+        semaforo = `<span class="semaforo ${colorClass}">●</span>`;
+        barra = `<div class="bar" style="width:${Math.min(ratio,1)*100}%;"></div>`;
+      }
+      tablaSAP += `<tr>
+        <td>${op.nombre}</td>
+        <td>${op.fueMin} FUE's</td>
+        <td>${totalFUE.toFixed(2)} ${barra}</td>
+        <td style="text-align:center;">${semaforo}</td>
+      </tr>`;
+    });
+
+    tablaSAP += `</table>`;
+    resumenDiv.innerHTML += tablaSAP;
+  }
+
+  document.getElementById("calcular").addEventListener("click", calcularFUE);
+
+  // Exportar toda la guía a PDF profesional con checkboxes visibles
+document.getElementById("exportar").addEventListener("click", function() {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({ orientation: "p", unit: "pt", format: "a4" });
+
+  // Abrir todos los acordeones antes de exportar
+  const acordeones = document.querySelectorAll(".accordion");
+  acordeones.forEach(acc => {
+    acc.classList.add("active");
+    const panel = acc.nextElementSibling;
+    panel.style.display = "block";
+  });
+
+  const contenido = document.querySelector(".container"); // Toda la guía dentro del container
+  if (!contenido.innerHTML.trim()) {
+    alert("Genera primero el resumen");
+    return;
+  }
+
+  const pageWidth = doc.internal.pageSize.getWidth();
+  const marginLeft = 15;
+  const marginRight = 15;
+  const headerHeight = 50;
+  const bottomMargin = 30;
+
+  // Antes de renderizar con html2canvas, reemplazamos checkboxes por símbolos visibles
+  const checkboxes = contenido.querySelectorAll('input[type="checkbox"]');
+  checkboxes.forEach(cb => {
+    const symbol = cb.checked ? "✓" : "✗";
+    const span = document.createElement("span");
+    span.textContent = symbol;
+    span.style.fontWeight = "bold";
+    span.style.color = cb.checked ? "green" : "red";
+    cb.parentNode.replaceChild(span, cb);
+  });
+
+  doc.html(contenido, {
+    x: marginLeft,
+    y: headerHeight,
+    html2canvas: { scale: 0.6, width: pageWidth - marginLeft - marginRight },
+    callback: function(doc) {
+      const totalPages = doc.internal.getNumberOfPages();
+      for (let i = 1; i <= totalPages; i++) {
+        doc.setPage(i);
+
+        // ----- Encabezado -----
+        doc.setFont("helvetica", "bold");
+        doc.setFontSize(18);
+        doc.text("Guía de Preventa SAP - Alan Espinosa", pageWidth / 2, 25, { align: "center" });
+
+        // ----- Pie de página -----
+        const footerY = doc.internal.pageSize.getHeight() - bottomMargin;
+        doc.setFont("helvetica", "normal");
+        doc.setFontSize(10);
+        doc.text(`Página ${i} de ${totalPages}`, pageWidth - marginRight - 100, footerY);
+      }
+
+      doc.save("Guia_Prepventa_SAP.pdf");
+    },
+    margin: [headerHeight, marginRight, bottomMargin, marginLeft]
+  });
+});
+}); 
+</script>
+
+</body>
+</html>
